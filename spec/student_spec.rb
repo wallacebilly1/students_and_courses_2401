@@ -10,8 +10,8 @@ RSpec.describe Student do
   it 'can access attribute data for a student object' do
     morgan = Student.new({name: "Morgan", age: 21})
 
-    expect(morgan.name).to be "Morgan"
-    expect(morgan.age).to be 21
+    expect(morgan.name).to eq "Morgan"
+    expect(morgan.age).to eq 21
   end
 
   

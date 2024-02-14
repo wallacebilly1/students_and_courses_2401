@@ -18,4 +18,8 @@ RSpec.describe Gradebook do
   it 'can access attribute data for a Gradebook object' do
     expect(@dr_math_gradebook.instructor).to eq "Dr. Math"
   end
+
+  it 'has an empty array of courses upon initializing' do
+    expect(@dr_math_gradebook.courses).to eq []
+  end
 end

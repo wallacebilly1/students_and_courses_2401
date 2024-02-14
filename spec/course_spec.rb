@@ -22,15 +22,20 @@ RSpec.describe Course do
     expect(@course.students).to eq []
   end
 
-  it 'returns if the course is full' do
-    expect(@course.full?).to be false
-  end
-
   it 'can #enroll students in courses' do
     @course.enroll(@student1)
     expect(@course.students).to eq [@student1]
 
     @course.enroll(@student2)
     expect(@course.students).to eq [@student1, @student2]
+  end
+
+  it 'returns if the course is full' do
+    expect(@course.full?).to be false
+
+    @course.enroll(@student1)
+    @course.enroll(@student2)
+
+    expect(@course.full?).to be true
   end
 end

@@ -70,7 +70,7 @@ RSpec.describe Gradebook do
 
     threshold = 90
     below_an_a = @dr_math_gradebook.students_below(threshold)
-
+    
     expect(below_an_a).to eq [@student1, @student2, @student3]
   end
 end

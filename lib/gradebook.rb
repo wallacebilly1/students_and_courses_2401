@@ -16,4 +16,11 @@ class Gradebook
       {course => course.students}
     end.reduce({}, :merge)
   end
+
+  def students_below(threshold)
+    student_list = list_all_students.values.flatten
+    student_list.select do |student|
+      student.grade < threshold
+    end
+  end
 end

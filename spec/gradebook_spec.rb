@@ -22,4 +22,11 @@ RSpec.describe Gradebook do
   it 'has an empty array of courses upon initializing' do
     expect(@dr_math_gradebook.courses).to eq []
   end
+
+  it 'can add courses' do
+    new_course = @dr_math_gradebook.add_course(@course)
+
+    expect(new_course).to eq [@course]
+    expect(@dr_math_gradebook.courses).to eq [@course]
+  end
 end

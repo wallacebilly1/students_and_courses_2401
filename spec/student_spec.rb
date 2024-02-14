@@ -20,5 +20,14 @@ RSpec.describe Student do
     expect(morgan.scores).to eq []
   end
 
+  it 'can add scores to the scores array' do
+    morgan = Student.new({name: "Morgan", age: 21})
+
+    morgan.log_score(89)
+    morgan.log_score(78)
+
+    expect(morgan.scores).to eq [89, 78]
+  end
+
   
 end

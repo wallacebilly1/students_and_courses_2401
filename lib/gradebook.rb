@@ -10,4 +10,10 @@ class Gradebook
     @courses << course
     @courses
   end
+
+  def list_all_students
+    @courses.map do |course|
+      {course => course.students}
+    end.reduce({}, :merge)
+  end
 end

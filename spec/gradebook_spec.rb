@@ -44,7 +44,7 @@ RSpec.describe Gradebook do
     @dr_math_gradebook.add_course(trigonometry)
 
     student_list = @dr_math_gradebook.list_all_students
-
+    
     expect(student_list).to be_a Hash
   end
 end

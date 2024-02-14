@@ -44,7 +44,33 @@ RSpec.describe Gradebook do
     @dr_math_gradebook.add_course(trigonometry)
 
     student_list = @dr_math_gradebook.list_all_students
-    
+
     expect(student_list).to be_a Hash
+  end
+
+  it 'can return a list of students below a threshold' do
+    @calculus.enroll(@student1)
+    @calculus.enroll(@student2)
+
+    trigonometry = Course.new("Trigonometry", 4)
+    trigonometry.enroll(@student3)
+    trigonometry.enroll(@student4)
+
+    @dr_math_gradebook.add_course(@calculus)
+    @dr_math_gradebook.add_course(trigonometry)
+
+    @student1.log_score(85)
+    @student1.log_score(90)
+    @student2.log_score(40)
+    @student2.log_score(50)
+    @student3.log_score(20)
+    @student3.log_score(80)
+    @student4.log_score(99)
+    @student4.log_score(98)
+
+    threshold = 90
+    below_an_a = @dr_math_gradebook.students_below(threshold)
+
+    expect(below_an_a).to eq [@student1, @student2, @student3]
   end
 end

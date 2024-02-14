@@ -1,7 +1,8 @@
 class Course
+  attr_reader :subject, :capacity
 
-  def initialize(course, capacity)
-    @course = course
+  def initialize(subject, capacity)
+    @subject = subject
     @capacity = capacity
   end
  

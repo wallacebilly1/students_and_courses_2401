@@ -15,7 +15,7 @@ RSpec.describe Gradebook do
     expect(@dr_math_gradebook).to be_instance_of(Gradebook)
   end
 
-  it 'can access attribute data for a Gradebook object'
+  it 'can access attribute data for a Gradebook object' do
     expect(@dr_math_gradebook.instructor).to eq "Dr. Math"
   end
 end

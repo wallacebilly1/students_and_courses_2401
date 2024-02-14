@@ -21,4 +21,10 @@ RSpec.describe Course do
     
     expect(course.students).to eq []
   end
+
+  it 'returns if the course is full' do
+    course = Course.new("Calculus", 2)
+
+    expect(course.full?).to be false
+  end
 end

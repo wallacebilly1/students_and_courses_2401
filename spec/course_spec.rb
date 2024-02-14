@@ -27,10 +27,10 @@ RSpec.describe Course do
   end
 
   it 'can #enroll students in courses' do
-    @course.enroll(student1)
+    @course.enroll(@student1)
     expect(@course.students).to eq [@student1]
 
-    @course.enroll(student2)
+    @course.enroll(@student2)
     expect(@course.students).to eq [@student1, @student2]
   end
 end

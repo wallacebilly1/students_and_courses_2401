@@ -15,4 +15,10 @@ RSpec.describe Course do
     expect(course.subject).to eq "Calculus"
     expect(course.capacity).to eq 2
   end
+
+  it 'has an empty array of students by default' do
+    course = Course.new("Calculus", 2)
+    
+    expect(course.students).to eq []
+  end
 end
